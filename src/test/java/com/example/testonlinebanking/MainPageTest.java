@@ -32,8 +32,7 @@ public class MainPageTest {
         open("http://localhost:4200");
     }
 
-
-    @Order(1)
+    @Order(value = 10)
     @Test
     public void loginWithInvalidUsernameAndPassword() {
         mainPage.showLoginPageButton.click();
@@ -62,11 +61,11 @@ public class MainPageTest {
         homePage.homePageLink.click();
         sleep(1000);
         homePage.transactionLink.click();
-        sleep(1000);
+        sleep(3000);
         homePage.transferLink.click();
         sleep(1000);
         homePage.chequeBookRequestLink.click();
-        sleep(1000);
+        sleep(3000);
         homePage.profileLink.click();
         sleep(1000);
         mainPage.logoutButton.click();
@@ -126,31 +125,5 @@ public class MainPageTest {
         mainPage.logoutButton.click();
         sleep(2000);
     }
-
-//    @Test
-//    public void search() {
-//        mainPage.searchButton.click();
-//
-//        $("[data-test='search-input']").sendKeys("Selenium");
-//        $("button[data-test='full-search-button']").click();
-//
-//        $("input[data-test='search-input']").shouldHave(attribute("value", "Selenium"));
-//    }
-//
-//    @Test
-//    public void toolsMenu() {
-//        mainPage.toolsMenu.click();
-//
-//        $("div[data-test='main-submenu']").shouldBe(visible);
-//    }
-//
-//    @Test
-//    public void navigationToAllTools() {
-//        mainPage.seeAllToolsButton.click();
-//
-//        $("#products-page").shouldBe(visible);
-//
-//        assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());
-//    }
 
 }

@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ee77e15-169c-4968-a3b7-0b70a656358f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/ChequeBookRequestPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/TransferPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test Results - MainPageTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/testonlinebanking/MainPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +14,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -55,7 +52,7 @@
       <recent name="com.example.testonlinebanking" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainPageTest">
+  <component name="RunManager" selected="JUnit.MainPageTest.loginWithInvalidUsernameAndPassword">
     <configuration name="MainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testOnlineBanking" />
       <extension name="coverage">
@@ -121,9 +118,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainPageTest.loginWithInvalidUsernameAndPassword" />
         <item itemvalue="JUnit.MainPageTest" />
         <item itemvalue="JUnit.MainPageTest.transferFund" />
-        <item itemvalue="JUnit.MainPageTest.loginWithInvalidUsernameAndPassword" />
         <item itemvalue="JUnit.MainPageTest.requestChequeBook" />
       </list>
     </recent_temporary>
@@ -136,7 +133,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662913340324</updated>
-      <workItem from="1662913341858" duration="21713000" />
+      <workItem from="1662913341858" duration="24111000" />
     </task>
     <servers />
   </component>
