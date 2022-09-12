@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,12 +16,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPageTest {
     MainPage mainPage = new MainPage();
     LoginPage loginPage = new LoginPage();
-
     HomePage homePage = new HomePage();
+    ChequeBookRequestPage chequeBookRequestPage = new ChequeBookRequestPage();
+
+    TransferPage transferPage = new TransferPage();
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1280x1280";
+        Configuration.browserSize = "1680x1280";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
@@ -29,62 +32,99 @@ public class MainPageTest {
         open("http://localhost:4200");
     }
 
+
     @Order(1)
     @Test
-    public void loginWithInvalidUsernameAndPassword() throws InterruptedException {
+    public void loginWithInvalidUsernameAndPassword() {
         mainPage.showLoginPageButton.click();
-        Thread.sleep(5000);
+        sleep(1000);
         loginPage.inputUsername.sendKeys("Selenium");
-        Thread.sleep(5000);
+        sleep(1000);
         loginPage.inputPassword.sendKeys("Selenium");
-        Thread.sleep(5000);
+        sleep(1000);
         loginPage.loginButton.submit();
-        Thread.sleep(5000);
+        sleep(1000);
         assertEquals("Login Failed Wrong Username or Password", loginPage.loginAlertText.text());
+        sleep(1000);
     }
     @Order(2)
     @Test
-    public void testMenuBarLinks() throws InterruptedException {
+    public void testMenuBarLinks() {
         mainPage.showLoginPageButton.click();
-        Thread.sleep(5000);
+        sleep(2000);
         loginPage.inputUsername.sendKeys("vivian");
-        Thread.sleep(5000);
+        sleep(1000);
         loginPage.inputPassword.sendKeys("vivian");
         loginPage.loginButton.submit();
-        Thread.sleep(5000);
-        Selenide.refresh();
+        sleep(2000);
+        refresh();
         assertEquals("IcinBankPortal", Selenide.title());
         homePage.homePageLink.click();
-        Thread.sleep(5000);
+        sleep(1000);
         homePage.transactionLink.click();
-        Thread.sleep(5000);
+        sleep(1000);
         homePage.transferLink.click();
-        Thread.sleep(5000);
+        sleep(1000);
         homePage.chequeBookRequestLink.click();
-        Thread.sleep(5000);
+        sleep(1000);
         homePage.profileLink.click();
+        sleep(1000);
         mainPage.logoutButton.click();
+        sleep(1000);
+        homePage.logoLink.click();
+        sleep(2000);
     }
 
     @Order(3)
     @Test
-    public void requestChequeBook() throws InterruptedException {
+    public void requestChequeBook() {
         mainPage.showLoginPageButton.click();
-        Thread.sleep(5000);
+        sleep(1000);
         loginPage.inputUsername.sendKeys("vivian");
-        Thread.sleep(5000);
+        sleep(1000);
         loginPage.inputPassword.sendKeys("vivian");
+        sleep(2000);
         loginPage.loginButton.submit();
-        Thread.sleep(5000);
-        Selenide.refresh();
+        sleep(3000);
+        refresh();
+        sleep(2000);
         homePage.chequeBookRequestLink.click();
-        Thread.sleep(5000);
+        sleep(2000);
+        chequeBookRequestPage.requestChequeBookButton.click();
+        sleep(2000);
+        assertEquals("Check Book Request Sent Successfully",$x("//div[@id='alert']").text());
+        sleep(2000);
         mainPage.logoutButton.click();
+        sleep(1000);
+        homePage.logoLink.click();
+        sleep(2000);
     }
     @Order(4)
     @Test
     public void transferFund(){
-
+        mainPage.showLoginPageButton.click();
+        sleep(1000);
+        loginPage.inputUsername.sendKeys("vivian");
+        sleep(1000);
+        loginPage.inputPassword.sendKeys("vivian");
+        sleep(2000);
+        loginPage.loginButton.submit();
+        sleep(3000);
+        refresh();
+        sleep(2000);
+        homePage.transferLink.click();
+        sleep(1000);
+        transferPage.destinationAccountInput.sendKeys("110012555521503353");
+        sleep(1500);
+        transferPage.amountInput.sendKeys("300000");
+        sleep(1500);
+        transferPage.descriptionInput.sendKeys("Transafer Amount to the given account");
+        sleep(1500);
+        transferPage.transferButton.submit();
+        sleep(2500);
+        transferPage.alertMessage.shouldBe(visible);
+        mainPage.logoutButton.click();
+        sleep(2000);
     }
 
 //    @Test
